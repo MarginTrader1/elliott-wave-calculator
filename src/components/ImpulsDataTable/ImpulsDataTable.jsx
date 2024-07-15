@@ -78,7 +78,7 @@ const ImpulsDataTable = ({
                   <p>{endWave1}</p>
                )}
             </div>
-            <div className={css.wave}>
+            <div className={css.waveText}>
                <p>Длина 1 волны</p>
                <p>{wave1Lenght}</p>
             </div>
@@ -128,11 +128,11 @@ const ImpulsDataTable = ({
                   <p>{endWave3}</p>
                )}
             </div>
-            <div className={css.wave}>
+            <div className={css.waveText}>
                <p>Длина 3 волны</p>
                <p>{wave3Lenght}</p>
             </div>
-            <div className={css.wave}>
+            <div className={css.waveText}>
                <p>Общая длина 1 и 3 волн</p>
                <p>{wave13Lenght}</p>
             </div>

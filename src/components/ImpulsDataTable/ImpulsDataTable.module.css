@@ -16,10 +16,21 @@
    border-radius: 5px;
 }
 
+.text {
+   background-color: azure;
+}
+
 .wave {
    width: 400px;
    display: flex;
    justify-content: space-between;
+}
+
+.waveText {
+   width: 400px;
+   display: flex;
+   justify-content: space-between;
+   background-color: #e9e9e9;
 }
 
 .waveInput {
@@ -39,3 +50,5 @@
    background-color: #3f51b51a;
    cursor: pointer;
 }
+
+
