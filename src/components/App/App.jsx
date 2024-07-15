@@ -7,6 +7,7 @@ import ImpulsDataTable from "../ImpulsDataTable/ImpulsDataTable";
 import ImpulseTable from "../ImpulseTable/ImpulseTable";
 import CorrectionDataTable from "../CorrectionDataTable/CorrectionDataTable";
 import CorrectionTable from "../CorrectionTable/CorrectionTable";
+import Signature from "../Signature/Signature";
 
 const initialStateImpuls = {
    startWave1: 0,
@@ -161,6 +162,7 @@ function App() {
                waveCheight2618={waveCheight2618}
             />
          </div>
+         <Signature />
       </section>
    );
 }
