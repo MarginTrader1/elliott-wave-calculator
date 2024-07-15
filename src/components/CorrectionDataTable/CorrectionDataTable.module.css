@@ -14,6 +14,10 @@
    gap: 10px;
    border: 2px solid #696868;
    border-radius: 5px;
+   > div {
+      height: 23px;
+   }
+   
 }
 
 .text {
@@ -49,4 +53,8 @@
    border-radius: 8px;
    background-color: #3f51b51a;
    cursor: pointer;
+}
+
+input:focus {
+   border: none;
 }
