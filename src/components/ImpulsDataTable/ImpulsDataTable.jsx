@@ -1,7 +1,7 @@
 import css from "./ImpulsDataTable.module.css";
 import { useState } from "react";
 
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 
 const ImpulsDataTable = ({
    startWave1,
@@ -159,7 +159,11 @@ const ImpulsDataTable = ({
                   <p>{startWave5}</p>
                )}
             </div>
-            <button type="button" className={css.button} onClick={resetWavesData}>
+            <button
+               type="button"
+               className={css.button}
+               onClick={resetWavesData}
+            >
                Reset
             </button>
          </Form>
