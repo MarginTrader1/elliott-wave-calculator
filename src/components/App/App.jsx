@@ -5,6 +5,8 @@ import css from "./App.module.css";
 import Description from "../Description/Description";
 import ImpulsDataTable from "../ImpulsDataTable/ImpulsDataTable";
 import ImpulseTable from "../ImpulseTable/ImpulseTable";
+import CorrectionDataTable from "../CorrectionDataTable/CorrectionDataTable";
+import CorrectionTable from "../CorrectionTable/CorrectionTable";
 
 const initialStateImpuls = {
    startWave1: 0,
@@ -14,18 +16,38 @@ const initialStateImpuls = {
    startWave5: 0,
 };
 
+const initialStateCorrection = {
+   startWaveA: 0,
+   endWaveA: 0,
+   endWaveB: 0,
+};
+
 //получаем данные с локал сторедж
 const getLSData = () => {
    const wavesData = JSON.parse(localStorage.getItem("wavesImpuls"));
+   return wavesData === null ? initialStateCorrection : wavesData; //проверяем данные в локал сторедж
+};
+
+//получаем данные с локал сторедж
+const getLSDataCorrection = () => {
+   const wavesData = JSON.parse(localStorage.getItem("wavesCorrection"));
    return wavesData === null ? initialStateImpuls : wavesData; //проверяем данные в локал сторедж
 };
 
 function App() {
    const [impuls, setImpuls] = useState(getLSData);
+   const [correction, setCorrection] = useState(getLSDataCorrection);
 
    // функция добавления данных в стейт для импульса
    const add = (key, value) => {
       setImpuls((prevState) => {
+         return { ...prevState, [key]: Number(value) };
+      });
+   };
+
+   // функция добавления данных в стейт для импульса
+   const addCrn = (key, value) => {
+      setCorrection((prevState) => {
          return { ...prevState, [key]: Number(value) };
       });
    };
@@ -35,11 +57,22 @@ function App() {
       setImpuls(initialStateImpuls);
    };
 
+   // функция сброса формы
+   const resetWavesDataCrn = () => {
+      setCorrection(initialStateCorrection);
+   };
+
    // функция добавление данных в локал сторедж
    useEffect(() => {
       localStorage.setItem("wavesImpuls", JSON.stringify(impuls));
    }, [impuls]);
 
+   // функция добавление данных в локал сторедж
+   useEffect(() => {
+      localStorage.setItem("wavesCorrection", JSON.stringify(correction));
+   }, [correction]);
+
+   // обработка данных для импульса
    const { startWave1, endWave1, startWave3, endWave3, startWave5 } = impuls;
    const wave1Lenght = endWave1 - startWave1;
    const wave3Lenght = endWave3 - startWave3;
@@ -60,15 +93,22 @@ function App() {
    const wave4correction05 = Math.round(endWave3 - wave13Lenght * 0.5);
 
    const wave5height1 = Math.round(startWave5 + wave1Lenght);
-   const wave5height0382impuls = Math.round(
-      startWave5 + (startWave5 - startWave1) * 0.618
-   );
+   const wave5height0382impuls = Math.round(startWave5 + (startWave5 - startWave1) * 0.618);
    const wave5height1618 = Math.round(startWave5 + wave1Lenght * 1.618);
-   const wave5height0618impuls = Math.round(
-      startWave5 + (startWave5 - startWave1) / 0.618
-   );
+   const wave5height0618impuls = Math.round(startWave5 + (startWave5 - startWave1) / 0.618);
    const wave5height1618W1W3 = Math.round(startWave5 + wave13Lenght * 1.618);
    const wave5height2618W1W3 = Math.round(startWave5 + wave13Lenght * 2.618);
+
+   // обработка данных для коррекций
+   const { startWaveA, endWaveA, endWaveB } = correction;
+
+   const waveALenght = Math.round(startWaveA - endWaveA);
+   const waveBLenght = Math.round(endWaveB - endWaveA);
+
+   const waveCheight0618 = Math.round(endWaveB - waveALenght * 0.618);
+   const waveCheight1 = Math.round(endWaveB - waveALenght * 1);
+   const waveCheight1618 = Math.round(endWaveB - waveALenght * 1.618);
+   const waveCheight2618 = Math.round(endWaveB - waveALenght * 2.618);
 
    return (
       <section className={css.container}>
@@ -104,6 +144,23 @@ function App() {
             wave5height1618W1W3={wave5height1618W1W3}
             wave5height2618W1W3={wave5height2618W1W3}
          />
+         <div className={css.correctionList}>
+            <CorrectionDataTable
+               addCrn={addCrn}
+               resetWavesDataCrn={resetWavesDataCrn}
+               startWaveA={startWaveA}
+               endWaveA={endWaveA}
+               waveALenght={waveALenght}
+               endWaveB={endWaveB}
+               waveBLenght={waveBLenght}
+            />
+            <CorrectionTable
+               waveCheight0618={waveCheight0618}
+               waveCheight1={waveCheight1}
+               waveCheight1618={waveCheight1618}
+               waveCheight2618={waveCheight2618}
+            />
+         </div>
       </section>
    );
 }
