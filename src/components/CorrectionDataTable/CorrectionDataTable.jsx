@@ -35,7 +35,7 @@ const CorrectionDataTable = ({
                {showInput1 ? (
                   <input
                      name="startWaveA"
-                     type="text"
+                     type="number"
                      id={`startWaveA`}
                      autoFocus
                      placeholder={`${startWaveA}`}
@@ -58,7 +58,7 @@ const CorrectionDataTable = ({
                {showInput2 ? (
                   <input
                      name="endWaveA"
-                     type="text"
+                     type="number"
                      id={`endWaveA`}
                      autoFocus
                      placeholder={`${endWaveA}`}
@@ -89,7 +89,7 @@ const CorrectionDataTable = ({
                {showInput3 ? (
                   <input
                      name="endWaveB"
-                     type="text"
+                     type="number"
                      id={`endWaveB`}
                      autoFocus
                      placeholder={`${endWaveB}`}
