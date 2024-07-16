@@ -16,11 +16,11 @@ const ImpulsDataTable = ({
    add,
 }) => {
    const initialValues = {
-      startWave1: "",
-      endWave1: "",
-      startWave3: "",
-      endWave3: "",
-      startWave5: "",
+      startWave1: 0,
+      endWave1: 0,
+      startWave3: 0,
+      endWave3: 0,
+      startWave5: 0,
    };
 
    const [showInput1, setShowInput1] = useState(false);
@@ -41,7 +41,7 @@ const ImpulsDataTable = ({
                {showInput1 ? (
                   <input
                      name="startWave1"
-                     type="text"
+                     type="number"
                      id={`startWave1`}
                      autoFocus
                      placeholder={`${startWave1}`}
@@ -64,7 +64,7 @@ const ImpulsDataTable = ({
                {showInput2 ? (
                   <input
                      name="endWave1"
-                     type="text"
+                     type="number"
                      id={`endWave1`}
                      autoFocus
                      placeholder={`${endWave1}`}
@@ -91,7 +91,7 @@ const ImpulsDataTable = ({
                {showInput3 ? (
                   <input
                      name="startWave3"
-                     type="text"
+                     type="number"
                      id={`startWave3`}
                      autoFocus
                      placeholder={`${startWave3}`}
@@ -114,7 +114,7 @@ const ImpulsDataTable = ({
                {showInput4 ? (
                   <input
                      name="endWave3"
-                     type="text"
+                     type="number"
                      id={`endWave3`}
                      autoFocus
                      placeholder={`${endWave3}`}
@@ -145,7 +145,7 @@ const ImpulsDataTable = ({
                {showInput5 ? (
                   <input
                      name="startWave5"
-                     type="text"
+                     type="number"
                      id={`startWave5`}
                      autoFocus
                      placeholder={`${startWave5}`}
