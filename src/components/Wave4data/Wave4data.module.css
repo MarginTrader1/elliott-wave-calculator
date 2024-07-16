@@ -1,4 +1,6 @@
 .waveData {
+   margin-left: auto;
+   margin-right: auto;
    width: 140px;
    display: flex;
    align-items: center;

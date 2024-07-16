@@ -1,14 +1,8 @@
-.table {
-   width: 400px;
-}
-
-.title {
-   margin-bottom: 20px;
-}
-
 .dataList {
+   margin-left: auto;
+   margin-right: auto;
    padding: 20px;
-   width: 450px;
+   min-width: 300px;
    display: flex;
    flex-direction: column;
    gap: 10px;
@@ -19,22 +13,31 @@
    }
 }
 
-.text {
-   background-color: azure;
+@media screen and (min-width: 480px) {
+   .dataList {
+      min-width: 450px;
+   }
 }
 
 .wave {
-   width: 400px;
    display: flex;
    justify-content: space-between;
 }
 
 .waveText {
-   width: 400px;
    display: flex;
    justify-content: space-between;
    background-color: #e9e9e9;
-   
+}
+
+@media screen and (max-width: 479px) {
+   .wave {
+      width: 300px;
+   }
+
+   .waveText {
+      width: 300px;
+   }
 }
 
 .waveInput {
