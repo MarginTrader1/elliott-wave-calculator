@@ -73,15 +73,9 @@ function App() {
       localStorage.setItem("wavesCorrection", JSON.stringify(correction));
    }, [correction]);
 
-   console.dir(impuls);
-
    // обработка данных для импульса
    const { startWave1, endWave1, startWave3, endWave3, startWave5 } = impuls;
    const wave1Lenght = endWave1 - startWave1;
-
-   console.log(startWave1);
-   console.log(endWave1);
-   console.log(`wave1Lenght = ${wave1Lenght}`);
 
    const wave3Lenght = endWave3 - startWave3;
    const wave13Lenght = endWave3 - startWave1;
