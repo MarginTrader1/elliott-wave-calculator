@@ -3,7 +3,7 @@ import css from "./CorrectionTable.module.css";
 const CorrectionTable = ({ waveCheight0618, waveCheight1, waveCheight1618, waveCheight2618 }) => {
    return (
       <div className={css.waveData}>
-         <h3 className={css.title}>Конец для волны С</h3>
+         <h3 className={css.title}>Конец для волны С (Y)</h3>
          <div className={css.list}>
             <p className={css.content}>
                <span>{"0,618"}</span> <span>{waveCheight0618}</span>

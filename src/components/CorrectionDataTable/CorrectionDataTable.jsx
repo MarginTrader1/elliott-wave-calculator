@@ -31,7 +31,7 @@ const CorrectionDataTable = ({
                onMouseEnter={() => setShowInput1(true)}
                onMouseLeave={() => setShowInput1(false)}
             >
-               <label htmlFor={`startWaveA`}>Начало роста волны A</label>
+               <label htmlFor={`startWaveA`}>Начало роста волны A (W)</label>
                {showInput1 ? (
                   <input
                      name="startWaveA"
@@ -54,7 +54,7 @@ const CorrectionDataTable = ({
                onMouseEnter={() => setShowInput2(true)}
                onMouseLeave={() => setShowInput2(false)}
             >
-               <label htmlFor={`endWaveA`}>Конец роста волны А</label>
+               <label htmlFor={`endWaveA`}>Конец роста волны А (W)</label>
                {showInput2 ? (
                   <input
                      name="endWaveA"
@@ -73,11 +73,11 @@ const CorrectionDataTable = ({
                )}
             </div>
             <div className={css.waveText}>
-               <p>Длина волны A</p>
+               <p>Длина волны A (W)</p>
                <p>{waveALenght}</p>
             </div>
             <div className={css.waveText}>
-               <p>Начало роста волны B</p>
+               <p>Начало роста волны B(X)</p>
                <p>{endWaveA}</p>
             </div>
             <div
@@ -85,7 +85,7 @@ const CorrectionDataTable = ({
                onMouseEnter={() => setShowInput3(true)}
                onMouseLeave={() => setShowInput3(false)}
             >
-               <label htmlFor={`endWaveB`}>Конец роста волны B</label>
+               <label htmlFor={`endWaveB`}>Конец роста волны B (X)</label>
                {showInput3 ? (
                   <input
                      name="endWaveB"
@@ -104,11 +104,11 @@ const CorrectionDataTable = ({
                )}
             </div>
             <div className={css.waveText}>
-               <p>Длина волны B</p>
+               <p>Длина волны B (X)</p>
                <p>{waveBLenght}</p>
             </div>
             <div className={css.waveText}>
-               <p>Начало роста волны С</p>
+               <p>Начало роста волны С (Y)</p>
                <p>{endWaveB}</p>
             </div>
 
