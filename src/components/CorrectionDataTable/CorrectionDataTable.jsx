@@ -77,7 +77,7 @@ const CorrectionDataTable = ({
                <p>{waveALenght}</p>
             </div>
             <div className={css.waveText}>
-               <p>Начало роста волны B(X)</p>
+               <p>Начало роста волны B (X)</p>
                <p>{endWaveA}</p>
             </div>
             <div
